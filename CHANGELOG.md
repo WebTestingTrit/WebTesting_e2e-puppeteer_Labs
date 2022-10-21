@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/compare/v2.0.1...v2.0.2) (2022-01-19)
+
+### [2.0.1](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/compare/v2.0.0...v2.0.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* imports ([1766951](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/commit/17669517a82e41eefaa7abfe86af02d8adf0fbe9))
+
+## [2.0.0](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/compare/v1.9.1...v2.0.0) (2021-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to es6 modules node 14
+
+### Features
+
+* output folder ([72631da](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/commit/72631dad02bf4d6bb26e11f44f627873f4d232eb))
+
+
+* update to es6 modules node 14 ([368acf3](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/commit/368acf30845e589479ff11c99ff4e54876919889))
+
 ### [1.9.1](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/compare/v1.9.0...v1.9.1) (2020-07-10)
 
 ## [1.9.0](https://github.com/LabsAdemy/WebTesting_e2e-puppeteer_Labs/compare/v1.8.0...v1.9.0) (2020-06-26)

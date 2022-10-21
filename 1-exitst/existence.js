@@ -1,7 +1,6 @@
-const { given, when, then } = require(`../lib/bit.tester`);
-
-module.exports = async function (pagePuppet) {
-  const inputPageUrl = `https://www.bitademy.com`;
+import { given, then, when } from "../lib/bit.tester";
+export async function checkExistence(pagePuppet) {
+  const inputPageUrl = `https://www.trainingit.es/`;
   await given(`A the url ${inputPageUrl}`, async () => {
     await when(`we visit it`, async () => {
       const response = await pagePuppet.goto(inputPageUrl, { waitUntil: `load` });
@@ -10,4 +9,4 @@ module.exports = async function (pagePuppet) {
       then(`respond with an ok status code`, actual, expected);
     });
   });
-};
+}
