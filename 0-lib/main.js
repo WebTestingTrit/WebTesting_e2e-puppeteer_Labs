@@ -1,9 +1,11 @@
 const { getBrowser, closeBrowser } = require(`./lib/puppets`);
 
+const targetUrl = `https://es.aiddbot.com`;
+
 async function test() {
   const browser = await getBrowser();
   const pagePuppet = await browser.newPage();
-  await pagePuppet.goto(`https://www.bitademy.com`, { waitUntil: `load` });
+  await pagePuppet.goto(targetUrl, { waitUntil: `load` });
   await closeBrowser(browser);
 }
 test();

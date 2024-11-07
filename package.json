@@ -21,20 +21,21 @@
     "deploy": "standard-version && git push --follow-tags origin master",
     "updates": "ncu -u"
   },
+  "type": "module",
   "devDependencies": {
-    "eslint": "7.3.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "nodemon": "^2.0.4",
-    "npm-check-updates": "^16.3.14",
-    "prettier": "2.0.5",
+    "eslint": "9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.7",
+    "npm-check-updates": "^17.1.10",
+    "prettier": "3.3.3",
     "standard-version": "^9.5.0"
   },
   "dependencies": {
-    "lighthouse": "^9.6.7",
-    "puppeteer": "^5.0.0",
+    "lighthouse": "^12.2.1",
+    "puppeteer": "^23.7.1",
     "request": "^2.88.2",
-    "supertest": "^4.0.2"
+    "supertest": "^7.0.0"
   },
   "nodemonConfig": {
     "ignore": [
