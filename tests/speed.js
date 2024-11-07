@@ -1,8 +1,8 @@
-const { given, when, then } = require(`../lib/bit.tester`);
-const { arrangeBrowser } = require(`../lib/lighter`);
-const { getAudits } = require(`../lib/auditor`);
+import { getAudits } from '../lib/auditor.js';
+import { given, then, when } from '../lib/bit.tester.js';
+import { arrangeBrowser } from '../lib/lighter.js';
 
-module.exports = async function () {
+export default async function () {
   await given(`A deployed site`, async () => {
     const inputPageUrl = `https://es.aiddbot.com`;
     const { chrome, browser, chrome_config } = await arrangeBrowser();
@@ -17,7 +17,7 @@ module.exports = async function () {
     browser.disconnect();
     await chrome.kill();
   });
-};
+}
 
 // score = audits.find(a => a.id === 'first-meaningful-paint').score;
 // actual = score > minimumExpected;

@@ -1,31 +1,31 @@
-const { given, when, then } = require(`../lib/bit.tester`);
-const request = require(`supertest`);
+import request from 'supertest';
+import { given, then, when } from '../lib/bit.tester.js';
 
-module.exports = async function () {
+export default async function () {
   await getHello();
   await postProject();
-};
+}
 async function getHello() {
-  const inputHostUrl = `https://api-base.herokuapp.com`;
+  const inputHostUrl = `https://jsonplaceholder.typicode.com`;
   await given(`the API url ${inputHostUrl}`, async () => {
-    const inputEndPoint = `/api/pub/hello`;
+    const inputEndPoint = `/todos`;
     await when(`we call the ${inputEndPoint} endPoint`, async () => {
       const response = await request(inputHostUrl).get(inputEndPoint);
-      const actual = response.body.message;
-      const expected = `Hola Mundo`;
-      then(`respond with an Hola Mundo message`, actual, expected);
+      const actual = response.status;
+      const expected = 200;
+      then(`respond with status code 200`, actual, expected);
     });
   });
 }
 
 async function postProject() {
-  const inputHostUrl = `https://api-base.herokuapp.com`;
+  const inputHostUrl = `https://jsonplaceholder.typicode.com`;
   await given(`the API url ${inputHostUrl}`, async () => {
-    const inputEndPoint = `/api/pub/projects`;
+    const inputEndPoint = `/todos`;
     await when(`we post to the ${inputEndPoint} endPoint`, async () => {
-      const inputProject = { name: 'start testing', dueDate: '2020-12-31' };
-      const response = await request(inputHostUrl).post(inputEndPoint).send(inputProject);
-      const actual = response.body.name;
+      const inputToDo = { title: 'start testing', body: 'this is a test' };
+      const response = await request(inputHostUrl).post(inputEndPoint).send(inputToDo);
+      const actual = response.body.title;
       const expected = 'start testing';
       then(`respond with the same object`, actual, expected);
       const expectedStatus = 201;

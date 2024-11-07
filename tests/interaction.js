@@ -1,12 +1,16 @@
-const { given, when, then } = require(`../lib/bit.tester`);
+import { given, then, when } from '../lib/bit.tester.js';
 
-module.exports = async function (pagePuppet) {
+export default async function (pagePuppet) {
   await given(`A term to find on google`, async () => {
     const inputPageUrl = `https://www.google.com`;
     const inputTerm = `aiddbot`;
     await pagePuppet.goto(inputPageUrl, { waitUntil: `networkidle2` });
     await when(`we search ${inputTerm}`, async () => {
-      await pagePuppet.focus('[name=q]');
+      // Start of Selection
+      //await pagePuppet.focus('button div[role="none"]').click();
+      // accept cookies
+      await pagePuppet.keyboard.press('Enter');
+      await pagePuppet.focus('input');
       await pagePuppet.keyboard.type(inputTerm);
       await pagePuppet.keyboard.press('Enter');
       await pagePuppet.waitForNavigation();
@@ -15,4 +19,4 @@ module.exports = async function (pagePuppet) {
       then(`the related site is found`, actual, expected);
     });
   });
-};
+}

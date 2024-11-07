@@ -1,6 +1,6 @@
-const { given, when, then } = require(`../lib/bit.tester`);
+import { given, then, when } from '../lib/bit.tester.js';
 
-module.exports = async function (pagePuppet) {
+export default async function (pagePuppet) {
   await given(`Any page of my site`, async () => {
     const inputPageUrl = `https://es.aiddbot.com`;
     const inputUserAgent =
@@ -18,4 +18,4 @@ module.exports = async function (pagePuppet) {
       then(`it hides main-navigation`, actual, expected);
     });
   });
-};
+}

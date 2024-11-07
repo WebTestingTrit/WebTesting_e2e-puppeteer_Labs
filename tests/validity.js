@@ -1,6 +1,6 @@
-const { given, when, then } = require(`../lib/bit.tester`);
+import { given, then, when } from '../lib/bit.tester.js';
 
-module.exports = async function (pagePuppet) {
+export default async function (pagePuppet) {
   await given(`A site url`, async () => {
     const inputPageUrl = `https://es.aiddbot.com`;
     await when(`we scrap it for empty links`, async () => {
@@ -12,4 +12,4 @@ module.exports = async function (pagePuppet) {
       then(`have no one`, actual, expected);
     });
   });
-};
+}
