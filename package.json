@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "nodemon main.js",
+    "start:0": "node 0-lib/main.js",
     "deploy": "standard-version && git push --follow-tags origin master",
     "updates": "ncu -u"
   },

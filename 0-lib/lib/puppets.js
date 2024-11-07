@@ -1,9 +1,9 @@
 // const path = require(`path`);
 
-const puppeteer = require(`puppeteer`);
+import puppeteer from 'puppeteer';
 
 let browser = null;
-exports.getBrowser = async function getBrowser() {
+export const getBrowser = async function getBrowser() {
   if (!browser) {
     browser = await puppeteer.launch({
       headless: false,
@@ -14,7 +14,7 @@ exports.getBrowser = async function getBrowser() {
   return browser;
 };
 
-exports.closeBrowser = async function close(browser) {
+export const closeBrowser = async function close(browser) {
   await browser.close();
 };
 

@@ -1,11 +1,11 @@
-const { getBrowser, closeBrowser } = require(`./lib/puppets`);
+import { closeBrowser, getBrowser } from './lib/puppets.js';
 
-const targetUrl = `https://es.aiddbot.com`;
+const targetUrl = 'https://es.aiddbot.com';
 
 async function test() {
   const browser = await getBrowser();
   const pagePuppet = await browser.newPage();
-  await pagePuppet.goto(targetUrl, { waitUntil: `load` });
+  await pagePuppet.goto(targetUrl, { waitUntil: 'load' });
   await closeBrowser(browser);
 }
 test();
