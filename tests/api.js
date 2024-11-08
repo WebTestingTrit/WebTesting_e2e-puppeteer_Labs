@@ -1,12 +1,17 @@
 import request from 'supertest';
 import { given, then, when } from '../lib/bit.tester.js';
 
+const inputHostUrl = `https://jsonplaceholder.typicode.com`;
+
 export default async function () {
   await getHello();
   await postProject();
 }
+
+/**
+ * gets the 200 ok base response
+ */
 async function getHello() {
-  const inputHostUrl = `https://jsonplaceholder.typicode.com`;
   await given(`the API url ${inputHostUrl}`, async () => {
     const inputEndPoint = `/todos`;
     await when(`we call the ${inputEndPoint} endPoint`, async () => {
@@ -18,8 +23,10 @@ async function getHello() {
   });
 }
 
+/**
+ * posts to the project endPoint and checks the response
+ */
 async function postProject() {
-  const inputHostUrl = `https://jsonplaceholder.typicode.com`;
   await given(`the API url ${inputHostUrl}`, async () => {
     const inputEndPoint = `/todos`;
     await when(`we post to the ${inputEndPoint} endPoint`, async () => {
