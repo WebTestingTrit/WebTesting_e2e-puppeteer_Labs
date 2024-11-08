@@ -1,12 +1,15 @@
-const { given, when, then } = require(`../lib/bit.tester`);
-module.exports = async function (pagePuppet) {
-  const inputPageUrl = `https://es.aiddbot.com/`;
+import { given, then, when } from '../lib/bit.tester.js';
+/**
+ * checks the content of a page
+ * @param {*} pagePuppet a browser page managed by puppeteer
+ * @param {*} inputPageUrl the url to check
+ */
+export default async function (pagePuppet, inputPageUrl, expectedTitle) {
   await given(`A the page at ${inputPageUrl}`, async () => {
     await when(`we get its title`, async () => {
       await pagePuppet.goto(inputPageUrl, { waitUntil: `load` });
       const actual = await pagePuppet.title();
-      const expected = `bitAdemy`;
-      then(`it is ${expected}`, actual, expected);
+      then(`it is ${expectedTitle}`, actual, expectedTitle);
     });
   });
-};
+}

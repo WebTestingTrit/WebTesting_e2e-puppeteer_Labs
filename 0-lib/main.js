@@ -8,6 +8,10 @@ async function test() {
   await pagePuppet.goto(targetUrl, { waitUntil: 'load' });
   await closeBrowser(browser);
 }
+
+/**
+ * initial testing with puppeteer
+ */
 test();
 
 // const { getBrowser, closeBrowser, takeScreenshot } = require(`./lib/puppets`);

@@ -1,12 +1,15 @@
 import { given, then, when } from '../lib/bit.tester.js';
-
-export default async function (pagePuppet) {
-  const inputPageUrl = `https://es.aiddbot.com`;
+/**
+ * checks if a site exists
+ * @param {*} pagePuppet a browser page managed by puppeteer
+ * @param {*} inputPageUrl the url to check
+ */
+export default async function (pagePuppet, inputPageUrl) {
   await given(`A the url ${inputPageUrl}`, async () => {
     await when(`we visit it`, async () => {
       const response = await pagePuppet.goto(inputPageUrl, { waitUntil: `load` });
-      let actual = response.ok();
-      let expected = true;
+      const actual = response.ok();
+      const expected = true;
       then(`respond with an ok status code`, actual, expected);
     });
   });
