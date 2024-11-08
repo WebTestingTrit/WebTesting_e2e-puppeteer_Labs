@@ -1,6 +1,6 @@
 import { closeBrowser, getBrowser } from './lib/puppets.js';
 
-const targetUrl = 'https://es.aiddbot.com';
+const targetUrl = 'https://www.trainingit.es/';
 
 async function test() {
   const browser = await getBrowser();

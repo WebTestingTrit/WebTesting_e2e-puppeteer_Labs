@@ -6,7 +6,7 @@ import testExistence from './tests/existence.js';
 import testInteraction from './tests/interaction.js';
 import testValidity from './tests/validity.js';
 
-const inputPageUrl = `https://es.aiddbot.com`;
+const inputPageUrl = `https://www.trainingit.es/`;
 
 /**
  * main function that runs the tests
@@ -15,7 +15,7 @@ async function test() {
   const { browser, pagePuppet } = await arrangeBefore();
   await testExistence(pagePuppet, inputPageUrl);
   await testContent(pagePuppet, inputPageUrl);
-  await testInteraction(pagePuppet, `aiddbot.com`, `aiddbot.com`);
+  await testInteraction(pagePuppet, `trainingit.es`, `trainingit.es`);
   await testEmulation(pagePuppet, inputPageUrl);
   await testValidity(pagePuppet, inputPageUrl);
   await takeScreenshot(pagePuppet);

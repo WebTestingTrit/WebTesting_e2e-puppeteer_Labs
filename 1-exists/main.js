@@ -7,9 +7,13 @@ import testExistence from './existence.js';
 async function test() {
   const browser = await getBrowser();
   const pagePuppet = await browser.newPage();
-  const inputPageUrl = `https://es.aiddbot.com`;
+  const inputPageUrl = `https://www.trainingit.es/`;
   await testExistence(pagePuppet, inputPageUrl);
-  await testContent(pagePuppet, inputPageUrl, `AIDD bot (español)`);
+  await testContent(
+    pagePuppet,
+    inputPageUrl,
+    `Formación IT online y presencial orientada a desarrolladores - TrainingIT`
+  );
   await closeBrowser(browser);
 }
 /**
